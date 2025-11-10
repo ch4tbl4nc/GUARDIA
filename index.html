@@ -1,10 +1,288 @@
-<html>
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=VT323&display=swap"
+        rel="stylesheet">
+    <title>PORTFOLIO CH4TBL4NC</title>
+</head>
+<style>
+    :root {
+        --primary-color: #12769E;
+        --background-color: rgb(5, 20, 28);
+        --text-color: #ffffff;
+        --highlight-color: #043775;
+
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: var(--background-color);
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 40px;
+        margin: auto;
+        max-width: 1200px;
+
+    }
+
+    header i {
+        color: var(--primary-color);
+        transition: text-shadow 0.3s, color 0.3s;
+
+    }
+
+    header i:hover {
+        color: #26a4d6;
+        text-shadow: var(--primary-color) 0px 0px 25px;
+    }
+
+    haeder nav {
+        text-align: right;
+        display: inline-block;
+    }
+
+    nav a {
+        font-family: Consolas, 'Monaco', 'Lucida Console', 'Courier New', monospace;
+        color: var(--primary-color);
+        text-decoration: none;
+        margin: 0 10px;
+        transition: border-bottom 0.15s;
+    }
+
+    nav a:hover {
+        padding-bottom: 5px;
+        border-bottom: var(--primary-color) 4px solid;
+    }
+
+    nav a span {
+        font-size: smaller;
+        color: #ffffff;
+    }
+
+    nav a.resume {
+        border: 2px solid var(--primary-color);
+        padding: 5px 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s, color 0.3s, border-radius 0.3s;
+    }
+
+    nav a.resume:hover {
+        background-color: var(--primary-color);
+        color: #ffffff;
+        border-radius: 25px;
+    }
+
+    section {
+        display: flex;
+        align-items: flex-start;
+        padding-top: 70px;
+        max-width: 1200px;
+        margin: auto;
+        perspective: 1000px;
+    }
+
+    .card {
+        width: 320px;
+        background: --background-color;
+        border-radius: 25px;
+        padding: 24px;
+        box-shadow: 0 0px 25px rgba(0, 0, 0, 0.5);
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
+    }
+
+    .card:hover {
+        /* L'effet 3D ! Jouez avec les valeurs rotateX et rotateY */
+        transform: perspective(1000px) rotateX(5deg) rotateY(-8deg) scale(1.05);
+        /* On accentue l'ombre pour l'effet de "soulèvement" */
+        box-shadow: 0 0px 40px rgba(255, 255, 255, 0.02), 0 0 30px rgba(18,118,158,0.4);
+    }
+
+    .card .avatar {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-bottom: 14px;
+        border: 3px solid var(--highlight-color);
+    }
+
+    .card h3 {
+        margin: 0;
+        font-family: 'Orbitron', sans-serif;
+        font-size: 22px;
+        letter-spacing: 0.6px;
+    }
+
+    .card .role {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.75);
+        margin: 6px 0 12px 0;
+        text-align: center;
+    }
+
+    .card .socials {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .card .socials li {
+        margin: 8px 0;
+    }
+
+    .card .socials a {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        color: #ffffff;
+        padding: 8px 12px;
+        border-radius: 8px;
+        transition: background-color 0.18s, transform 0.12s;
+        background: rgba(255, 255, 255, 0.02);
+    }
+
+    .card .socials a:hover {
+        background: rgba(18, 118, 158, 0.12);
+        transform: translateY(-3px);
+    }
+
+    .card .socials i {
+        width: 28px;
+        text-align: center;
+        color: var(--primary-color);
+        font-size: 18px;
+    }
+
+    div {
+        color: #ffffff;
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    div p {
+        font-family: 'Source Code Pro', monospace;
+        font-size: 20px;
+        font-weight: 500;
+        margin: 0;
+        color: var(--highlight-color);
+    }
+
+    div h1 {
+        font-family: 'Orbitron', sans-serif;
+        font-size: 60px;
+        margin: 0;
+    }
+
+    div h2 {
+        font-family: Consolas, 'Monaco', 'Lucida Console', 'Courier New', monospace;
+        font-size: 30px;
+        font-weight: 400;
+        margin: 0 0 10px 0
+    }
+
+    div h2 span {
+        color: var(--primary-color);
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    div p.paragraphe {
+        color: #ffffff;
+        font-family: Arial, sans-serif;
+        font-size: 15px;
+        line-height: 1.5;
+        max-width: 600px;
+    }
+
+    div a.button {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        border: 2px solid var(--primary-color);
+        color: var(--primary-color);
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s, color 0.3s, border-radius 0.3s, transform 0.12s;
+    }
+
+    div a.button:hover {
+        background-color: var(--primary-color);
+        color: #ffffff;
+        border-radius: 25px;
+        transform: translateY(-3px);
+    }
+</style>
+
+
 <body>
-	
-<h1>BONJOUR !!!</h1>
+    <header>
+        <i class="fa-solid fa-shield-halved fa-2x"></i>
+        <nav>
+            <a href="">01. <span>About</span></a>
+            <a href="">02. <span>Experience</span></a>
+            <a href="">03. <span>Work</span></a>
+            <a href="">04. <span>Contact</span></a>
+            <a href="" class="resume">Resume</a>
+        </nav>
+    </header>
 
-<h3>Présentation rapide</h3>
+    <section>
+        <div>
+            <p>Salut, je suis</p>
+            <h1>Ch4t Bl4nc</h1>
+            <h2>Etudiant en premiere année chez <br><span>Guardia Cybersecurity School</span></h2>
+            <hr style="
+                width: 50%; 
+                text-align: left; 
+                margin: 0 0 20px 0; 
+                margin-left: 0; 
+                color: var(--primary-color); 
+                border: 1px solid var(--primary-color);
+                ">
+            <p class="paragraphe">
+                Je suis passionné par la cybersécurité depuis mon plus jeune âge.
+                Mon objectif est de développer mes compétences techniques et de contribuer à la protection des systèmes
+                informatiques contre les menaces croissantes.
+            </p>
+            <a href="" class="button">Voir mes projet</a>
+        </div>
+        <div class="card">
+            <img src="https://tse1.explicit.bing.net/th/id/OIP.3doSIz_LdHlCbOAZ7ogKLQAAAA?cb=ucfimg2ucfimg=1&w=170&h=177&rs=1&pid=ImgDetMain&o=7&rm=3"
+                alt="avatar" class="avatar">
+            <h3>Ch4t Bl4nc</h3>
+            <p class="role">Etudiant — Guardia Cybersecurity School</p>
 
-<p>VERSION FINAL !</p>
+            <ul class="socials">
+                <li><a href="https://discordapp.com/users/714807042648571995" aria-label="Discord"><i
+                            class="fa-brands fa-discord"></i>0xchatblanc</a></li>
+                <li><a href="https://x.com/0xch4tbl4nc" aria-label="X"><i class="fa-brands fa-x-twitter"></i>
+                        @ch4tbl4nc</a></li>
+                <li><a href="https://github.com/0xchatblanc" aria-label="GitHub"><i class="fa-brands fa-github"></i>
+                        0xchatblanc</a></li>
+                <li><a href="https://linkedin.com/in/maël-d-b96868386" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i> M______ D.</a></li>
+            </ul>
+        </div>
+
+
+        </div>
+    </section>
 </body>
+
 </html>
